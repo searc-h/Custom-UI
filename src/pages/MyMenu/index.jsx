@@ -1,7 +1,7 @@
 import React, { useEffect, useState ,useRef} from 'react'
 import { useNavigate , useLocation } from 'react-router-dom'
 import {observer} from 'mobx-react-lite'
-import './index.css'
+import './index.less'
 import useDark from '../../hooks/useDark'
   
 

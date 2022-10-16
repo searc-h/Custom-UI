@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import './index.css'
+import './index.less'
 export default function ProgressSteps() {
 
     // 当前激活下标【注意这里的下标就是能够引起页面改变的下标】

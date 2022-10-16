@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import './index.css'
+import './index.less'
 export default function PasswordGenerator() {
 
 

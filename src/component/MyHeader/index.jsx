@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import './index.css'
+import './index.less'
 import {observer} from 'mobx-react-lite'
 
 import { useNavigate } from 'react-router-dom'
