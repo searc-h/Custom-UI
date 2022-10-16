@@ -1,0 +1,44 @@
+.drawingPad{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(249, 214, 214);
+    .container{
+        background-color: rgb(158, 175, 209);
+        border: 2px solid rgb(177, 127, 61);
+    }
+    
+    #canvns{
+        background-color: #fff;
+    }
+    
+    .btnDivs{
+        width: 600px;
+        height: 60px;
+        display: flex;
+        color: black;
+        align-items: center;   
+    }
+    .puls,.num,.des,.clear{
+        line-height: 50px;
+        border: 2px solid black;
+        font-size: 2rem;
+        width: 60px;
+        text-align: center;
+        background-color: #fff;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+    .color{
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    
+    .clear{
+        /* 这样只看直接让该元素从右侧对齐 */
+        margin-left: auto;
+        cursor: pointer;
+    }
+}

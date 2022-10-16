@@ -1,0 +1,101 @@
+.mymenu{
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    position:relative;
+    transition: all 0.4s linear;
+    li{
+        list-style: none;
+    }
+
+    .top{
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 10px;
+        .title{
+            width: 150px;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 777;
+            line-height: 50px;
+        }
+        .dirBar{
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            i{
+                width: 100%;
+                text-align: center;
+                transition: all 0.2s linear;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+            i.rotate{
+                transform: rotateZ(180deg);
+            }
+        }
+    }
+
+    .content{
+        min-height: 80%;
+        padding: 4px;
+
+        .item{
+            line-height: 40px;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 5px;
+            padding: 5px 5px;
+            margin-top: 5px;
+            transition: all 0.2s linear;
+            &:hover{
+                background-color: rgba(197, 196, 196, 0.5);
+                cursor: pointer;
+            }
+            i{
+                color: #fff;
+            }
+            span:nth-child(1){
+                padding-left: 5px;
+            }
+            span:nth-child(2){
+                width: 40px;
+                text-align: center;
+            }
+
+            i.open{
+                color: rgb(51, 49, 49);
+            }
+        }
+        .item.open{
+            background-color: rgba(232, 234, 229, 0.5);
+            
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+    }
+
+}
+.mymenu::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+  
+    background-color: #b5b1b1;
+  
+  }
+  
+  .mymenu::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+  
+  }
+  
+  
+  
+  
+  .mymenu::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #d4cdcd;
+  }

@@ -1,0 +1,94 @@
+.netFlixNavigation{
+    width: 100%;
+    height: 100%;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0px;
+    background-color: rgb(241, 244, 237);
+    .container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .btnDiv{
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            z-index: 9;
+            display: none;
+            .btn{
+                outline: none;
+                border: none;
+                cursor: pointer;
+                background-color: #fff;
+                i{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .logo{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            .title{
+                padding: 10px;
+                font-size: 14px;
+                font-weight: 555;
+                text-align: center;
+            }
+        }
+
+        .slides{
+            position: absolute;
+            left: 0px;
+            height: 100%;
+            width: 400px;
+            z-index: 8;
+            // transform: translateX(100%);
+            .slide{
+                position: absolute;
+                height: 100%;
+                transition: all 0.4s ease-in;
+            }
+            .slide1{
+                width: 80%;
+                background-color: #fff;
+                z-index: 999;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition-delay: 0.6s;
+                .back{
+                    position: absolute;
+                    right: 20px;
+                    top: 10px;
+                    font-size: 1.5rem;
+                    color: rgb(7, 7, 7);
+                    cursor: pointer;
+                }
+                color: rgb(24, 24, 24);
+            }
+            .slide2{
+                width: 90%;
+                background-color: rgb(205, 18, 18);
+                z-index: 99;
+                transition-delay: 0.3s;
+            }
+            .slide3{
+                width: 100%;
+                background-color: black;
+                z-index: 9;
+            }
+        }
+        
+    }
+}

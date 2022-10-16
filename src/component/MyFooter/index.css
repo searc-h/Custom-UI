@@ -1,0 +1,9 @@
+.footer {
+  width: 100%;
+  line-height: 100px;
+  background-color: #f6f9fb;
+  text-align: center;
+  font-style: italic;
+  transition: all 0.4s linear;
+  position: absolute;
+}

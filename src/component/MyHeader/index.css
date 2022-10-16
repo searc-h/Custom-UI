@@ -1,0 +1,65 @@
+.header {
+  width: 100%;
+  background-color: #ffffff;
+  height: 80px;
+  text-align: center;
+  justify-content: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  justify-content: space-around;
+  padding: 0px 30px;
+  box-sizing: border-box;
+  transition: all 0.4s linear;
+  color: #f6f0f0;
+}
+.header .title {
+  width: 500px;
+  font-weight: 777;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .rightSide {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+.header .rightSide .backHome,
+.header .rightSide .noteBook {
+  transition: all 0.2s linear;
+}
+.header .rightSide .backHome a,
+.header .rightSide .noteBook a {
+  text-decoration: none;
+  color: inherit;
+}
+.header .rightSide .backHome:hover,
+.header .rightSide .noteBook:hover {
+  text-decoration: underline;
+}
+.header .rightSide .darkMode {
+  font-size: 1rem;
+  line-height: 30px;
+  background-color: #000;
+  color: #fff;
+  padding: 0px 5px;
+  border-radius: 7px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+@media (max-width: 800px) {
+  .header .title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .header .rightSide {
+    display: none;
+  }
+}
