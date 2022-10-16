@@ -1,5 +1,5 @@
 import React, { useState ,useRef} from 'react'
-import './index.css'
+import './index.less'
 import applause from '../../../assets/sounds/applause.mp3'
 import boo from '../../../assets/sounds/boo.mp3'
 import gasp from '../../../assets/sounds/gasp.mp3'

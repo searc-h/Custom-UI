@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import './index.css'
+import './index.less'
 import logo from '../../../assets/images/logo.png'
 export default function NetFlixNavigation() {
 

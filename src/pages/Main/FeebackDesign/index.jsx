@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './index.css'
+import './index.less'
 
 function submitRes({faceList,activeIndex,setActiveIndex,isSubmit,setIsSubmit,submitBtn}){
     if(isSubmit){

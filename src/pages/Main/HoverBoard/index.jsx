@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.css'
+import './index.less'
 
 function createDiv(num) {
   let color = ['#e74c3c', '#8e33ad', '#3298db', 'e67e22', '#ecc71']

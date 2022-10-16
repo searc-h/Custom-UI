@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './index.css'
+import './index.less'
 export default function ExpandingCard() {
 
     let [panelList, setPanelList] = useState([

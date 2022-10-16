@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import './index.css'
+import './index.less'
 export default function BackgroundSlider() {
 
     let [activeIndex , setActiveIndex]=useState(1)

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import './index.css'
+import './index.less'
 import imgs from '../../../assets/images/click.jpg'
 // 这里有onDoubleClick事件，可以直接使用
 

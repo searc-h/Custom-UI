@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import './index.css'
+import './index.less'
 export default function CustomSlider() {
     let tipRef = useRef(null)
     let changeBar = (e)=>{
