@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
-import './index.less'
+import styles from  './index.module.less'
 import {observer} from 'mobx-react-lite'
-
+import { Button } from '../../ui-components'
 import { useNavigate } from 'react-router-dom'
 import useDark from '../../hooks/useDark'
 function MyHeader() {
@@ -35,19 +35,19 @@ function MyHeader() {
     navigate('/')
   }
   return (
-    <div className='header' ref={headerRef}>
-        <div className="title" >
+    <div className={styles.header} ref={headerRef}>
+        <div className={styles.title} >
             This Is My Custom Component Of React 
         </div>
 
-        <div className="rightSide">
-          <div className="backHome" onClick={backHome}>首页</div>
-          <div className="noteBook">
+        <div className={styles.rightSide}>
+          <div className={styles.backHome} onClick={backHome}>首页</div>
+          <div className={styles.noteBook}>
             <a href="http://116.205.128.108:888/content/myopen">共享记事本</a>
           </div>
-          <button ref={btnRef} className="darkMode" onClick={changeTheDark} disabled={isPressed}>{isDark?'明亮模式':'夜间模式'}</button>
-        </div>
-        
+          <button className={styles.darkMode} ref={btnRef} onClick={changeTheDark} disabled={isPressed}>{isDark?'明亮模式':'夜间模式'}</button> 
+          
+        </div> 
     </div>
   )
 }
