@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import './index.less'
+import styles from  './index.module.less'
 export default function ProgressSteps() {
 
     // 当前激活下标【注意这里的下标就是能够引起页面改变的下标】
@@ -27,7 +27,7 @@ export default function ProgressSteps() {
         }
     ])
     // 修改当前激活的下标【点击事件触发回调---修改currentActive---useEffect监听改变作出相应---页面修改】
-    let changeCurrent = (tag) => {
+    let changeCurrent = (tag:boolean) => {
         if (tag && (currentActive < circleList.length)) {
             let current = currentActive + 1
             setCurrentActive(current)
@@ -45,7 +45,7 @@ export default function ProgressSteps() {
     let barRef = useRef(null)
     // 修改progress-bar宽度
     let changeProBar = ()=>{
-        barRef.current.style.width = `${(+currentActive-1)/(circleList.length-1) * 100}`+'%';
+        (barRef.current as any).style.width = `${(+currentActive-1)/(circleList.length-1) * 100}`+'%';
     }
     // 当前激活的下标改变，就会修改circleList数据，从而驱动页面刷新
     useEffect(() => {
@@ -64,11 +64,11 @@ export default function ProgressSteps() {
     }, [currentActive])
 
     return (
-        <div className='progresssteps'>
-            <div className="container">
+        <div className={styles.progresssteps}>
+            <div className={styles.container}>
 
-                <div className="progress-container">
-                    <div className="progress_bar" ref={barRef}></div>
+                <div className={styles.progressContainer}>
+                    <div className={styles.progressBar} ref={barRef}></div>
 
                     {
                         circleList.map((circle) => {
@@ -77,8 +77,8 @@ export default function ProgressSteps() {
                     }
                 </div>
 
-                <button onClick={() => { changeCurrent(false) }} className="btn" id="pre" disabled={currentActive === 1 ? true : false}>Pre</button>
-                <button onClick={() => { changeCurrent(true) }} className="btn" id="next" disabled={currentActive === 4 ? true : false}>Next</button>
+                <button onClick={() => { changeCurrent(false) }} className={styles.btn} id="pre" disabled={currentActive === 1 ? true : false}>Pre</button>
+                <button onClick={() => { changeCurrent(true) }} className={styles.btn} id="next" disabled={currentActive === 4 ? true : false}>Next</button>
             </div>
         </div>
     )

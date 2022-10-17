@@ -3,6 +3,7 @@ import {observer} from 'mobx-react-lite'
 
 import useDark from '../../hooks/useDark'
 import './index.less'
+
 function MyFooter() {
 
   let footerRef = useRef(null)
