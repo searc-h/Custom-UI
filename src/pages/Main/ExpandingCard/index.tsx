@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import './index.less'
+import { SwithCard } from '../../../ui-components'
+import panelItem = SwithCard.panelItem 
+
 export default function ExpandingCard() {
 
-    let [panelList, setPanelList] = useState([
+    let [panelList, setPanelList] = useState<panelItem[]>([
         {
             title: 'Explore The World',
             id: '1',
@@ -30,7 +33,7 @@ export default function ExpandingCard() {
         }
     ])
 
-    let selectPanel = (panel) => {
+    let selectPanel = (panel:panelItem) => {
         let active = !panel.active
         let newPanel = { ...panel, active }
 
@@ -50,15 +53,7 @@ export default function ExpandingCard() {
     return (
         <div className="expandingCard">
             <div className="container">
-                {
-                    panelList.map((panel) => {
-                        return (
-                            <div onClick={() => { selectPanel(panel) }} className={`panel ${'panel' + panel.id} ${panel.active ? "active" : ''}`} key={panel.id}>
-                                <h3>{panel.title}</h3>
-                            </div>
-                        )
-                    })
-                }
+                <SwithCard  panelList={panelList} selectPanel={selectPanel} />
             </div>
         </div>
     )
