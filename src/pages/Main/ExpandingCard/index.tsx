@@ -1,60 +1,50 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './index.less'
 import { SwithCard } from '../../../ui-components'
 import panelItem = SwithCard.panelItem 
-
+import img1 from '../../../assets/ImgList/0.jpg'
+import img2 from '../../../assets/ImgList/1.jpg'
+import img3 from '../../../assets/ImgList/2.jpg'
+import img4 from '../../../assets/ImgList/3.jpg'
+import img5 from '../../../assets/ImgList/4.jpg'
 export default function ExpandingCard() {
 
-    let [panelList, setPanelList] = useState<panelItem[]>([
+    let panelList:panelItem[]  = [
         {
             title: 'Explore The World',
             id: '1',
-            active: true
+            defaultActive: true,
+            imgUrl : img1
         },
         {
             title: 'Wild Forest',
             id: '2',
-            active: false
+            defaultActive: false,
+            imgUrl : img2
         },
         {
             title: 'Finding Beauty',
             id: '3',
-            active: false
+            defaultActive: false,
+            imgUrl : img3
         },
         {
             title: 'Seaching Map',
             id: '4',
-            active: false
+            defaultActive: false,
+            imgUrl : img4
         },
         {
             title: 'Explore The World',
             id: '5',
-            active: false
+            defaultActive: false,
+            imgUrl : img5
         }
-    ])
-
-    let selectPanel = (panel:panelItem) => {
-        let active = !panel.active
-        let newPanel = { ...panel, active }
-
-        // 这里同样要用map形式遍历，而不能直接[...panelList,newPanel]
-        setPanelList(
-            panelList.map((item) => {
-                if (item.id === panel.id) {
-                    return newPanel
-                } else {
-                    item.active = false
-                    return item
-                }
-            })
-        )
-    }
+    ]
 
     return (
         <div className="expandingCard">
-            <div className="container">
-                <SwithCard  panelList={panelList} selectPanel={selectPanel} />
-            </div>
+                <SwithCard  panelList={panelList} />
         </div>
     )
 }
