@@ -10,7 +10,9 @@ export default function Start() {
   return (
     <>
       <div className={stlyes.start}>
-        <Button clickTo={() => { navigate('/main/expanding-card') }} content={"Start"} color={"#000"}/>
+        <Button size='large' clickTo={() => { navigate('/main/expanding-card') }} color={"#000"}>
+          Start
+        </Button>
       </div>
     </>
   )
