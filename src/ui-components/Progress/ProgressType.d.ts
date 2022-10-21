@@ -5,7 +5,4 @@ declare namespace ProgressType {
         text : string,
     }
 
-    interface ProgressBtn {
-
-    }
 }
