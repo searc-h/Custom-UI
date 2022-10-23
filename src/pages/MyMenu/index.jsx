@@ -117,9 +117,10 @@ function MyMenu({ left, right }) {
       element:'/main/netflix-navigation'
     },
     {
-      title: '奔跑的滚444',
+      title: 'My Model',
       open: false,
-      id: '15'
+      id: '15',
+      element : "/main/my-model"
     },
     {
       title: '奔跑的滚444',

@@ -23,6 +23,7 @@ const VerifyAccount = lazy(()=>import('./pages/Main/VerifyAccount'))
 const FeebackDesign = lazy(()=>import('./pages/Main/FeebackDesign'))
 const CustomSlider = lazy(()=>import('./pages/Main/CustomSlider'))
 const NetFlixNavigation = lazy(()=>import('./pages/Main/NetFlixNavigation'))
+const MyModel = lazy(()=>import('./pages/Main/MyModel/MyModel.tsx'))
 function App() {
   
   return (
@@ -64,7 +65,7 @@ function App() {
                 <Route path='custom-slider' element={<CustomSlider/>}></Route>
                 
                 <Route path='netflix-navigation' element={<NetFlixNavigation/>}></Route>
-
+                <Route path='my-model' element={<MyModel />}></Route>
               </Route>
             </Routes>
 
