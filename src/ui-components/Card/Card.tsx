@@ -1,10 +1,34 @@
-import React from 'react'
+import React , {Ref, useEffect, useRef ,MutableRefObject} from 'react'
 import styles from './Card.module.less'
-export default function Card() {
+
+interface CardProps {
+  /**
+   * 标题
+   */
+  title : string 
+  content : any  //内容
+  shadow?: boolean //是否显示阴影
+  width?: string
+  height? :string
+  direction? : 'column' | 'row',  //纵向排列 |  横向排列
+}
+
+export default function Card(props : CardProps) {
+  let {title ,content ,shadow=true , direction="column" } = props
+
   return (
-    <div className={styles.Card}>
-        <div className={styles.header}>这里是Card头部</div>
-        <div className={styles.content}>这里是Card内容</div>
+    <div 
+      className={styles.Card}
+      style={{boxShadow:`${shadow?"0px 0px 5px rgba(0, 0, 0, 0.5)":"0"}` , flexDirection:`${direction}` , }}
+
+      >
+        <div
+          className={styles.header}
+          // 设置边框
+          style={{borderStyle:`${direction==='column'?"none none solid none":"none  solid none none"}`}}
+          >{title}</div>
+
+        <div className={styles.content}>{content}</div>
     </div>
   )
 }
