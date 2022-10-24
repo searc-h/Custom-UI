@@ -3,12 +3,14 @@ import SwithCard from "./SwithCards/SwithCard";
 import Progress from "./Progress/Progress";
 import SoundBtn from "./SoundBoard/SoundBtn";
 import Slider from "./Silder/Slider";
-import Model from "./Model/Model";
+import Modal from "./Modal/Modal";
+import Card from "./Card/Card";
 export {
     Button,
     SwithCard,
     Progress,
     SoundBtn,
     Slider,
-    Model
+    Modal,
+    Card
 }
