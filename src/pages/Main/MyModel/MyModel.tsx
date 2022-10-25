@@ -23,7 +23,7 @@ export default function MyModel() {
         
             {
                 <Modal showModel={showModel} changeShowModel={changeShowModel}>
-                    <Card />
+                    <Card title='展示头部' content="展示内容" shadow={false} />
                 </Modal>
             }
 

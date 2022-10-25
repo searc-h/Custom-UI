@@ -2,7 +2,7 @@ import React, { useRef} from 'react'
 import {observer} from 'mobx-react-lite'
 
 import useDark from '../../hooks/useDark'
-import './index.less'
+import styles from './index.less'
 
 function MyFooter() {
 
@@ -18,7 +18,7 @@ function MyFooter() {
     }
   )
   return (
-    <div className='footer' ref={footerRef}>
+    <div className={styles.footer} ref={footerRef}>
       I hope you can find fun in programming
     </div>
   )

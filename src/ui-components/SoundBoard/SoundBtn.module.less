@@ -1,11 +1,13 @@
 .container{
-    width: 100%;
-    padding: 20px;
-    height: 100%;
-    background-color: rgb(200, 151, 240);
+    // width: 100%;
+    height: 100px;
+    margin: 20px 0px;
+    padding: 30px;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: rgb(211, 207, 251);
     #buttons{
         width: 50%;
         line-height: 50px;
@@ -13,8 +15,7 @@
         justify-content: space-around;
     }
     .btn{
-        background-color: rgb(119, 68, 160);
-        color: rgb(216, 205, 205);
+        color: rgb(255, 255, 255);
         width: 15%;
         line-height: 40px;
         border: none;
@@ -22,8 +23,9 @@
         font-size: 18px;
         border-radius: 4px;
         overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.1);
     }
     .btn:active{
-        opacity: 0.8;
+        background-color: rgba(0, 0, 0, 0.5);
     }
 }

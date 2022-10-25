@@ -1,0 +1,49 @@
+@header-height : 50px;
+.App{
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  .header{
+    height: @header-height;
+  }
+  .mark{
+    width: 100%;
+    height: calc(100% - @header-height);
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-image: url('./assets/images/home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+
+  
+  .mid{
+    width: 100%;
+    height: calc(100% - @header-height);
+    margin-top: -1px;
+    z-index: 9;
+    position: absolute;
+    top: @header-height;
+    /* overflow: hidden; */
+  }
+
+  .footer{
+    width: 100%;
+    line-height: 50px;
+    background-color: rgb(246, 249, 251);
+    text-align: center;
+    font-style: italic;
+    transition: all 0.4s linear;
+  }
+  
+
+}
+
+

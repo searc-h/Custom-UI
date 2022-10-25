@@ -1,13 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
-// import ProgressBar = ProgressType.ProgressBar
 import styles from  './Progress.module.less'
 
-interface ProgressPropsType {
+export interface ProgressPropsType {
   total : number,
   nextText : string,
   preText : string
 }
-interface circleType {
+export interface circleType {
   title :string,
   id : string | number,
   active : boolean
