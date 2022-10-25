@@ -1,12 +1,21 @@
 import React, { useState } from 'react'
-import panelItem = SwithCard.panelItem
-import styles from './SwithCard.module.less'
+
+import styles from './SwitchCard.module.less'
+ 
+export interface panelItem {
+    title : string,  // 标题
+    id : string,   // 唯一id
+    defaultActive? : boolean ,   //是否默认展开
+    imgUrl: string
+}
 interface SwithCardPropsType {
     panelList: panelItem[],
+    height : string
 }
-export default function SwithCard(props: SwithCardPropsType) {
 
-    let { panelList } = props
+export default function SwitchCard(props: SwithCardPropsType) {
+
+    let { panelList,height } = props
     let [panelLists, setPanelLists] = useState<panelItem[]>([...panelList])
 
     let selectPanel = (panel: panelItem) => {
@@ -27,7 +36,7 @@ export default function SwithCard(props: SwithCardPropsType) {
     }
     return (
 
-        <div className={styles.switchCard} >
+        <div className={styles.switchCard}  style={{height}}>
             {
                 panelLists.map((panel) => {
                     return (

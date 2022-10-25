@@ -8,6 +8,11 @@ declare module '*.module.less' {
     
 }
 
+declare module '*.mp3'{
+  const src: string;
+  export default src;
+}
+
 // JPG文件是 src的字符串类型变量
 declare module '*.jpg' {
   const src: string;
@@ -25,4 +30,3 @@ declare module '*.png' {
   export default src;
 }
 
-declare module '*.less'

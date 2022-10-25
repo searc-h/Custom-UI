@@ -20,8 +20,6 @@ body::-webkit-scrollbar-track {
 }
 
 
-
-
 body::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: #5743ec;
@@ -33,4 +31,8 @@ body a{
 }
 body ul{
   list-style: none;
+}
+
+:root{
+  background-color: #fff;
 }

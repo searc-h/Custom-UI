@@ -14,12 +14,12 @@ interface CardProps {
 }
 
 export default function Card(props : CardProps) {
-  let {title ,content ,shadow=true , direction="column" } = props
+  let {title ,content ,shadow=true , direction="column" ,width="400px" , height="200px"} = props
 
   return (
     <div 
       className={styles.Card}
-      style={{boxShadow:`${shadow?"0px 0px 5px rgba(0, 0, 0, 0.5)":"0"}` , flexDirection:`${direction}` , }}
+      style={{boxShadow:`${shadow?"0px 0px 5px rgba(0, 0, 0, 0.5)":"0"}` , flexDirection:`${direction}` ,width ,height}}
 
       >
         <div
