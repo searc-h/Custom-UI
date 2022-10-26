@@ -1,33 +1,55 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode , useEffect,useState } from 'react'
 import styles from './Table.module.less'
 
 export interface ColumnsItem {
-    key:number | string,
-    title : string ,
-    dataIndex  : string,
-    render?:([...args])=>ReactNode
-    align?: 'right' | "center" | "lefts",
+    key:number | string,  // 唯一标识
+
+    title : string ,  // 表头表体
+
+    dataIndex  : string,  // 对应数据项的下标
+
+    width : string  // 宽度
+
+    render?:([...args])=>ReactNode  // render返回dom节点
 }
 
 interface PropsType {
     columns : ColumnsItem[],
     dataSource : any[],
-    size?: "middle" | "large"
+    size?: "small" | "middle" | "large"
+    align?: 'start' | "center" | "end"
 }
 
 export default function Table(props: PropsType) {
 
-    let { columns = [], dataSource = [] } = props
+    let { columns = [], dataSource = [] , align = "start" ,size = "middle"} = props
+    let [lineHeight , setLineHeight ] = useState<string>(size)  
+    useEffect(()=>{
+        switch (size) {
+            case "small":
+                setLineHeight("20px")
+                break;
+            case "middle":
+                setLineHeight("30px")
+                break
+            case "large":
+                setLineHeight("40px")
+                break
+            default:
+                break;
+        }
+    } , [size])
+
     console.log(dataSource)
     return (
         <div className={styles.Table} >
             <table cellPadding={0} cellSpacing={0}>
                 <thead >
-                <tr className={styles.tableRow}>
+                <tr className={styles.tableRow} >
                     {
                         columns.map((item)=>{
                             return (
-                                <th key={item.key}>{item.title}</th>
+                                <th style={{textAlign:align ,lineHeight,width:item.width}} key={item.key}>{item.title}</th>
                             )
                         })
                     }             
@@ -39,13 +61,21 @@ export default function Table(props: PropsType) {
                         {
                             dataSource.map((data)=>{
                                 return (
-                                    <tr className={styles.tableCol} key={data.key}>
+                                    <tr className={styles.tableCol} key={data.key} >
                                         {
                                             columns.map(item=>{
                                                 if(item.render){
-                                                    return <td key={item.key}>{item.render([data.key,data])}</td>
+                                                    return <td 
+                                                            style={{textAlign:align ,lineHeight}} 
+                                                            key={item.key}>
+                                                                {item.render([data.key,data])}
+                                                            </td>
                                                 }
-                                                return <td key={item.key}>{data[item.dataIndex]}</td>
+                                                return <td 
+                                                        style={{textAlign:align ,lineHeight}}
+                                                        key={item.key}>
+                                                            {data[item.dataIndex]}
+                                                        </td>
                                             })
                                         }
                                     </tr>

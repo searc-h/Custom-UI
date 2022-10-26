@@ -3,11 +3,13 @@ import styles from './Slider.module.less'
 interface PropsType {
     urlList : string[],
     bgSlide: boolean //背景是否同步切换
+    width ?: string,
+    height ?: string
 }
 
 export default function Slider(props :PropsType) {
 
-    let {urlList ,bgSlide} = props
+    let {urlList ,bgSlide , width="75%" , height="75%"} = props
 
     let [activeIndex , setActiveIndex]= useState<number>(0)
     
@@ -46,12 +48,12 @@ export default function Slider(props :PropsType) {
 
             <div className={styles.leftbox} onClick={() => { changeActive(false) }}>◁</div>
 
-            <div className={styles.imgcontainer}>
+            <div className={styles.imgcontainer} style={{width,height}}>
 
                 {
                     urlList.map((item,index) => {
                         return (
-                            <div key={index}  style={{backgroundImage:item}} className={`${styles.slide}  ${activeIndex === index ? `${styles.active}` : ''}`}></div>
+                            <div key={index}  style={{backgroundImage:item }} className={`${styles.slide}  ${activeIndex === index ? `${styles.active}` : ''}`}></div>
                         )
                     })
                 }
