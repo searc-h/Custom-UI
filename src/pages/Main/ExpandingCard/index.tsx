@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.less'
-import { SwitchCard,Description,Card ,PanelItem } from '../../../ui-components'
+import { SwitchCard,Description,Card ,PanelItem ,Table ,ColumnsType} from '../../../ui-components'
 
 import img1 from '../../../assets/ImgList/0.jpg'
 import img2 from '../../../assets/ImgList/1.jpg'
@@ -42,11 +42,62 @@ export default function ExpandingCard() {
         }
     ]
 
+    const dataSource = [
+        {
+            key: '1',
+            attribute: 'panelList',
+            describe : "图片数组",
+            type : "panelItem[]",
+        },
+        {
+            key: '2',
+            attribute: 'height',
+            describe : "图片高度",
+            type : "string",
+            default : "'400px'"
+        },
+    ]
+    const columns :ColumnsType = [
+        {
+            key : "属性",
+            title : "属性",
+            width : '100px',
+            dataIndex : "attribute",
+        },
+        {
+            key : "说明",
+            title : "说明",
+            width : '100px',
+            dataIndex : "describe"
+        },
+        {
+            key : "类型",
+            title :"类型",
+            width : '100px',
+            dataIndex : "type"
+        },
+        {
+            key : "默认值",
+            title : "默认值",
+            width : '100px',
+            dataIndex : "default",
+        }
+    ]
+    let api = <Table dataSource={dataSource} columns={columns} size='large'/>
+    let tips = [
+        '当你需要在展示全部图片以及重点突出某个内容的时候，或许这是一个不错的选择。',
+        '当你希望一次只展示一张图片的时候，不妨可以考虑用轮播图 Slider '
+    ]
     return (
         <div className="expandingCard">
-            <Description tips={['这里应该传入数组',"让我们来测试一下吧"]} title='SwitchCard 扩张卡片' height='500px'>
-                <Card width='80%' height='200px' title='说明' content={"nihao"} shadow={false}/>
+            <Description
+                tips={tips} 
+                title='SwitchCard 扩张卡片' 
+                height='500px' 
+                api={api}>
+                <code>这里放代码</code>
             </Description>
+
             <SwitchCard height={"400px"} panelList={panelList} />
         </div>
     )
