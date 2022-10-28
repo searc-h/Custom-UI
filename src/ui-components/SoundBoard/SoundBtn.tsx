@@ -2,40 +2,16 @@ import React , {useState} from 'react'
 import styles from './SoundBtn.module.less'
 interface SoundBtnProps {
   children : any,
-  nameToRef : any
+  nameToRef : any,
+  btnList : any[]
 }
 export default function SoundBtn(props:SoundBtnProps) {
 
-  let {nameToRef ,children} = props
+  let {nameToRef ,children ,btnList} = props
 
   let [currentPlay,setCurrentPlay] = useState('applause')
 
-  let [btnList] = useState([
-    {
-      title: "applause",
-      id: '1',
-    },
-    {
-      title: "boo",
-      id: '2'
-    },
-    {
-      title: "gasp",
-      id: '3'
-    },
-    {
-      title: "tada",
-      id: '4'
-    },
-    {
-      title: "victory",
-      id: '5'
-    },
-    {
-      title: 'wrong',
-      id: '6'
-    }
-  ])
+  
 
   let playMusic = (item:any) => {
     nameToRef[currentPlay].current.pause()
