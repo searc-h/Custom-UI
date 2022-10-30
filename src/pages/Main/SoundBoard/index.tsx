@@ -26,57 +26,74 @@ export default function SoundBoard() {
     victory:Myvictory,
     wrong:Mywrong
   }
+  let [btnList] = useState([
+    {
+      title: "applause",
+      id: '1',
+    },
+    {
+      title: "boo",
+      id: '2'
+    },
+    {
+      title: "gasp",
+      id: '3'
+    },
+    {
+      title: "tada",
+      id: '4'
+    },
+    {
+      title: "victory",
+      id: '5'
+    },
+    {
+      title: 'wrong',
+      id: '6'
+    }
+  ])
 
   const dataSource = [
     {
-      key: '1',
-      name: '胡彦斌',
-      age: 32,
-      address: '西湖区湖底公园1号',
+        key: '1',
+        attribute: 'nameToRef',
+        describe : "Ref[]",
+        type : "panelItem[]",
     },
     {
-      key: '2',
-      name: '胡彦祖',
-      age: 42,
-      address: '西湖区湖底公园2号',
+        key: '2',
+        attribute: 'children',
+        describe : "图片高度",
+        type : "string",
+        default : "'400px'"
     },
-    {
-      key: '3',
-      name: '胡彦文',
-      age: 52,
-      address: '西湖区湖底公园3号',
-    },
-    {
-      key: '4',
-      name: '胡彦武',
-      age: 62,
-      address: '西湖区湖底公园4号',
-    },
-  ];
-  
-  const columns:ColumnsType = [
-    {
-      title: '姓名',
-      dataIndex: 'name',
-      width : '100px',
-      key: 'name',
-      render:([name, item])=>{
-        return <button>{name + item.name}</button>
+  ]
+  const columns :ColumnsType = [
+      {
+          key : "属性",
+          title : "属性",
+          width : '100px',
+          dataIndex : "attribute",
       },
-    },
-    {
-      title: '年龄',
-      dataIndex: 'age',
-      width : '100px',
-      key: 'age',
-    },
-    {
-      title: '住址',
-      dataIndex: 'address',
-      width : '300px',
-      key: 'address',
-    },
-  ];
+      {
+          key : "说明",
+          title : "说明",
+          width : '100px',
+          dataIndex : "describe"
+      },
+      {
+          key : "类型",
+          title :"类型",
+          width : '100px',
+          dataIndex : "type"
+      },
+      {
+          key : "默认值",
+          title : "默认值",
+          width : '100px',
+          dataIndex : "default",
+      }
+  ]
 
   let api = <Table dataSource={dataSource} columns={columns}></Table>
 
@@ -85,7 +102,7 @@ export default function SoundBoard() {
       <Description tips={['这里应该传入数组',"让我们来测试一下吧"]} title='SoundBoard 音板' height='800px' api={api}>
         <Card width='80%' height='200px' title='说明' content={"nihao"} shadow={false}/>
       </Description>
-      <SoundBtn nameToRef={nameToRef}>
+      <SoundBtn nameToRef={nameToRef} btnList={btnList}>
           <audio src={applause} id="applause" ref={Myapplause}></audio>
           <audio src={boo} id="boo" ref={Myboo}></audio>
           <audio src={gasp} id="gasp"  ref={Mygasp}></audio>
