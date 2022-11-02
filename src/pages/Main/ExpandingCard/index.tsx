@@ -86,7 +86,7 @@ export default function ExpandingCard() {
     let api = <Table dataSource={dataSource} columns={columns} size='large'/>
     let tips = [
         '当你需要在展示全部图片以及重点突出某个内容的时候，或许这是一个不错的选择。',
-        '当你希望一次只展示一张图片的时候，不妨可以考虑用轮播图 Slider '
+        '当你希望一次只展示一张图片的时候，不妨可以考虑用轮播图BackGround Slider '
     ]
     return (
         <div className="expandingCard">

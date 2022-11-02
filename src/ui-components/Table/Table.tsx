@@ -12,7 +12,6 @@ export interface ColumnsItem {
 
     render?:([...args])=>ReactNode  // render返回dom节点
 }
-
 interface PropsType {
     columns : ColumnsItem[],
     dataSource : any[],
@@ -40,7 +39,7 @@ export default function Table(props: PropsType) {
         }
     } , [size])
 
-    console.log(dataSource)
+
     return (
         <div className={styles.Table} >
             <table cellPadding={0} cellSpacing={0}>

@@ -123,9 +123,10 @@ function MyMenu({ left, right }) {
       element : "/main/my-model"
     },
     {
-      title: '奔跑的滚444',
+      title: 'My Table',
       open: false,
-      id: '16'
+      id: '16',
+      element : "/main/my-table"
     },
     {
       title: '奔跑的滚444',
