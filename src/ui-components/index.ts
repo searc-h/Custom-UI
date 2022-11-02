@@ -10,7 +10,7 @@ import Modal from "./Modal/Modal";
 import Card from "./Card/Card";
 import Description from "./Description/Description";
 import Table from "./Table/Table";
-import { ColumnsItem } from "./Table/Table";
+import { ColumnsItem  } from "./Table/Table";
 export {
     Button,
     SwitchCard,

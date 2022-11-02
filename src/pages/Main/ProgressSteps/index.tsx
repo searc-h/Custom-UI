@@ -1,9 +1,17 @@
 import React  from 'react'
 import styles from  './index.module.less'
 import { Progress ,Description ,Card ,Table ,ColumnsType} from '../../../ui-components/index'
+
+interface dataSourceType {
+    key: string | number,
+    attribute: string,
+    describe : string,
+    type : string,
+    default?: any
+}
 export default function ProgressSteps() {
 
-    const dataSource = [
+    const dataSource:dataSourceType[] = [
         {
             key: '1',
             attribute: 'panelList',
