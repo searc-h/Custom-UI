@@ -95,7 +95,6 @@ export default function ExpandingCard() {
                 title='SwitchCard 扩张卡片' 
                 height='500px' 
                 api={api}>
-                <code>这里放代码</code>
             </Description>
 
             <SwitchCard height={"400px"} panelList={panelList} />

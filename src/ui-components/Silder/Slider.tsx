@@ -40,7 +40,7 @@ export default function Slider(props :PropsType) {
     useEffect(()=>{
         // 给外层元素设置图片
         if(bgSlide)
-            (Outer.current as any).style.backgroundImage = urlList[activeIndex] 
+            (Outer.current as any).style.backgroundImage = `url(${urlList[activeIndex]})`
     },[activeIndex])
 
     return (
@@ -53,7 +53,7 @@ export default function Slider(props :PropsType) {
                 {
                     urlList.map((item,index) => {
                         return (
-                            <div key={index}  style={{backgroundImage:item }} className={`${styles.slide}  ${activeIndex === index ? `${styles.active}` : ''}`}></div>
+                            <div key={index}  style={{backgroundImage:`url(${item})` }} className={`${styles.slide}  ${activeIndex === index ? `${styles.active}` : ''}`}></div>
                         )
                     })
                 }

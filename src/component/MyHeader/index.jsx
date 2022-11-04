@@ -43,7 +43,7 @@ function MyHeader() {
         <div className={styles.rightSide}>
           <div className={styles.backHome} onClick={backHome}>首页</div>
           <div className={styles.noteBook}>
-            <a href="http://116.205.128.108:888/content/myopen">共享记事本</a>
+            <a href="http://116.205.128.108:888/content/myopen">志愿活动管理系统</a>
           </div>
           <button className={styles.darkMode} ref={btnRef} onClick={changeTheDark} disabled={isPressed}>{isDark?'明亮模式':'夜间模式'}</button> 
           

@@ -41,9 +41,9 @@ export default function Description(props : PropsType) {
 
       <div className={styles.api}>
         <div className={styles.apiTitle} >API</div>
-        
-        {api}
-        
+        <div className={styles.apiTable}>
+          {api}
+        </div>
       </div>
 
 
