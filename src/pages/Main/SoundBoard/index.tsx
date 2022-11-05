@@ -68,7 +68,7 @@ export default function SoundBoard() {
         default : "'400px'"
     },
   ]
-  const columns :ColumnsType = [
+  const columns :ColumnsType<typeof dataSource[0]> = [
       {
           key : "属性",
           title : "属性",
@@ -99,8 +99,19 @@ export default function SoundBoard() {
 
   return (
     <div className={styles.soundboard}>
-      <Description tips={['这里应该传入数组',"让我们来测试一下吧"]} title='SoundBoard 音板' height='800px' api={api}>
-        <Card width='80%' height='200px' title='说明' content={"nihao"} shadow={false}/>
+      <Description 
+        tips={['当你想要为某些按钮添加音效时','切记传递Ref数组']} 
+        title='SoundBoard 音板' 
+        height='700px' 
+        api={api}>
+
+        <Card 
+          width='80%' 
+          height='200px'
+          title='说明' 
+          content={"nihao"} 
+          shadow={false}/>
+
       </Description>
       <SoundBtn nameToRef={nameToRef} btnList={btnList}>
           <audio src={applause} id="applause" ref={Myapplause}></audio>

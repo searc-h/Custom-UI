@@ -19,7 +19,7 @@ export default function MyTable() {
         },
     ]
 
-    const columns1 :ColumnsType = [
+    const columns1 :ColumnsType<typeof dataSource1[1]> = [
         {
             key : "属性",
             title : "属性",
@@ -68,7 +68,7 @@ export default function MyTable() {
 
     ]
 
-    const columns2 :ColumnsType = [
+    const columns2 :ColumnsType<typeof dataSource2[0]> = [
         {
             key : "姓名",
             title : "姓名",
@@ -97,7 +97,7 @@ export default function MyTable() {
             key:"",
             title : "操作" ,
             width : "200px",
-            dataIndex  : "attribute",
+            dataIndex  : "age",
             render:([...args])=><button onClick={()=>{alert(args[1].name+args[1].stuNumber)}}>{"查看"}</button>  // render返回dom节点
         }
     ]

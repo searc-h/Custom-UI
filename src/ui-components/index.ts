@@ -23,5 +23,5 @@ export {
     Table
 }
 export type PanelItem = panelItem
-export type ColumnsType = ColumnsItem[]
+export type ColumnsType<T> = ColumnsItem<T>[]
 

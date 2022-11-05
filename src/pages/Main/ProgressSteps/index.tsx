@@ -9,12 +9,6 @@ interface dataSourceType {
     type : string,
     default?: any
 }
-// {current: number,
-// setCurrent: React.Dispatch<React.SetStateAction<number>>
-// total : number,
-// nextText ? : string,
-// preText ? : string,
-// isBtn ?: boolean}
 export default function ProgressSteps() {
 
     let [current , setCurrent ] = useState<number>(0)
@@ -61,7 +55,7 @@ export default function ProgressSteps() {
         }
     ]
 
-    const columns :ColumnsType = [
+    const columns :ColumnsType<dataSourceType> = [
         {
             key : "属性",
             title : "属性",
@@ -98,7 +92,7 @@ export default function ProgressSteps() {
         <div className={styles.progresssteps}>
             <Description
                 tips={tips} 
-                title='ProgressSteps 进度条' 
+                title='Progress 进度条' 
                 height='800px'
                 api={api}>
                 <code>Code</code>

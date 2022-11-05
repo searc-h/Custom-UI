@@ -51,7 +51,7 @@ export default function BackgroundSlider() {
         },
     ]
 
-    const columns :ColumnsType = [
+    const columns :ColumnsType<dataSourceType> = [
         {
             key : "属性",
             title : "属性",
@@ -81,14 +81,15 @@ export default function BackgroundSlider() {
     let api = <Table dataSource={dataSource} columns={columns} size='large'/>
 
     let tips = [
-        '丝滑的进度条往往能提高用户体验'
+        '当你希望出现双层轮播图时可以考虑选择',
+        '当然你可以选择只当作普通轮播图使用'
     ]
     return (
         <div className='backgroundSlider'>
 
             <Description
                 tips={tips} 
-                title='ProgressSteps 进度条' 
+                title='Slider 双层背景图轮播图' 
                 height='600px'
                 api={api}>
                 <code>Code</code>
