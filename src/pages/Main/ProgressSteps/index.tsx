@@ -1,4 +1,4 @@
-import React  from 'react'
+import React, { useState }  from 'react'
 import styles from  './index.module.less'
 import { Progress ,Description ,Card ,Table ,ColumnsType} from '../../../ui-components/index'
 
@@ -11,23 +11,51 @@ interface dataSourceType {
 }
 export default function ProgressSteps() {
 
+    let [current , setCurrent ] = useState<number>(0)
+
     const dataSource:dataSourceType[] = [
         {
             key: '1',
-            attribute: 'panelList',
-            describe : "图片数组",
-            type : "panelItem[]",
+            attribute: 'current',
+            describe : "当前数值",
+            type : "number",
         },
         {
             key: '2',
-            attribute: 'height',
-            describe : "图片高度",
-            type : "string",
-            default : "'400px'"
+            attribute: 'setCurrent',
+            describe : "修改当前值函数",
+            type : "function",
         },
+        {
+            key: '3',
+            attribute: 'total',
+            describe : "总数",
+            type : "number",
+        },
+        {
+            key: '4',
+            attribute: 'nextText',
+            describe : "当你需要按钮时，按钮文字（可选）",
+            type : "string",
+            default : "'next'"
+        },
+        {
+            key: '5',
+            attribute: 'preText',
+            describe : "当你需要按钮时，按钮文字（可选）",
+            type : "string",
+            default : "'pre'"
+        },
+        {
+            key: '6',
+            attribute: 'isBtn',
+            describe : "是否需要按钮（可选）",
+            type : "boolean",
+            default : "true"
+        }
     ]
 
-    const columns :ColumnsType = [
+    const columns :ColumnsType<dataSourceType> = [
         {
             key : "属性",
             title : "属性",
@@ -37,13 +65,13 @@ export default function ProgressSteps() {
         {
             key : "说明",
             title : "说明",
-            width : '100px',
+            width : '300px',
             dataIndex : "describe"
         },
         {
             key : "类型",
             title :"类型",
-            width : '100px',
+            width : '300px',
             dataIndex : "type"
         },
         {
@@ -64,13 +92,13 @@ export default function ProgressSteps() {
         <div className={styles.progresssteps}>
             <Description
                 tips={tips} 
-                title='ProgressSteps 进度条' 
+                title='Progress 进度条' 
                 height='800px'
                 api={api}>
-                <Card width='50%' height='200px' title='说明' content={"nihao"} shadow={false}/>
+                <code>Code</code>
             </Description>
             
-            <Progress total={5} preText={"PRE"} nextText={"NXET"}/>
+            <Progress isBtn={true} current={current}  setCurrent={setCurrent}  total={6} preText={"PRE"} nextText={"NXET"}></Progress>
         </div>
     )
 }

@@ -7,6 +7,13 @@ import img2 from '../../../assets/ImgList/1.jpg'
 import img3 from '../../../assets/ImgList/2.jpg'
 import img4 from '../../../assets/ImgList/3.jpg'
 import img5 from '../../../assets/ImgList/4.jpg'
+interface dataSourceType {
+    key: string | number,
+    attribute: string,
+    describe : string,
+    type : string,
+    default? : string
+}
 export default function ExpandingCard() {
 
     let panelList:PanelItem[]  = [
@@ -42,7 +49,7 @@ export default function ExpandingCard() {
         }
     ]
 
-    const dataSource = [
+    const dataSource:dataSourceType[] = [
         {
             key: '1',
             attribute: 'panelList',
@@ -57,7 +64,7 @@ export default function ExpandingCard() {
             default : "'400px'"
         },
     ]
-    const columns :ColumnsType = [
+    const columns :ColumnsType<dataSourceType> = [
         {
             key : "属性",
             title : "属性",
@@ -95,7 +102,6 @@ export default function ExpandingCard() {
                 title='SwitchCard 扩张卡片' 
                 height='500px' 
                 api={api}>
-                <code>这里放代码</code>
             </Description>
 
             <SwitchCard height={"400px"} panelList={panelList} />

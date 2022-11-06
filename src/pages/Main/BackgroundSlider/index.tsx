@@ -1,18 +1,100 @@
 import React from 'react'
 import './index.less'
-import { Slider } from '../../../ui-components'
+import { Slider, Description , Table ,ColumnsType} from '../../../ui-components'
+import img1 from '../../../assets/ImgList/15.jpg'
+import img2 from '../../../assets/ImgList/14.jpg'
+import img3 from '../../../assets/ImgList/13.jpg'
+import img4 from '../../../assets/ImgList/12.jpg'
+import img5 from '../../../assets/ImgList/11.jpg'
+import img6 from '../../../assets/ImgList/10.jpg'
+interface dataSourceType {
+    key: string | number,
+    attribute: string,
+    describe : string,
+    type : string,
+    default?: any
+}
+// urlList : string[],
+//     bgSlide: boolean //背景是否同步切换
+//     width ?: string,
+//     height ?: string
 export default function BackgroundSlider() {
 
-    let urlList = [
-        "url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')",
-        "url('https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1934&q=80')",
-        "url('https://images.unsplash.com/photo-1495467033336-2effd8753d51?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')",
-        "url('https://images.unsplash.com/photo-1522735338363-cc7313be0ae0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2689&q=80')",
-        " url('https://images.unsplash.com/photo-1559087867-ce4c91325525?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80')",
+    let urlList = [img1 , img2 ,img3 , img4 ,img5, img6]
+
+    const dataSource:dataSourceType[] = [
+        {
+            key: '1',
+            attribute: 'urlList',
+            describe : "图片数组",
+            type : "string[]",
+        },
+        {
+            key: '2',
+            attribute: 'bgSlide',
+            describe : "是否需要父容器展示背景图片",
+            type : "boolean",
+        },
+        {
+            key: '3',
+            attribute: 'width',
+            describe : "图片宽度（可选）",
+            type : "string",
+            default : "'75%'"
+        },
+        {
+            key: '4',
+            attribute: 'height',
+            describe : "图片高度（可选）",
+            type : "string",
+            default : "'75%'"
+        },
     ]
-    
+
+    const columns :ColumnsType<dataSourceType> = [
+        {
+            key : "属性",
+            title : "属性",
+            width : '100px',
+            dataIndex : "attribute",
+        },
+        {
+            key : "说明",
+            title : "说明",
+            width : '300px',
+            dataIndex : "describe"
+        },
+        {
+            key : "类型",
+            title :"类型",
+            width : '300px',
+            dataIndex : "type"
+        },
+        {
+            key : "默认值",
+            title : "默认值",
+            width : '100px',
+            dataIndex : "default",
+        }
+    ]
+
+    let api = <Table dataSource={dataSource} columns={columns} size='large'/>
+
+    let tips = [
+        '当你希望出现双层轮播图时可以考虑选择',
+        '当然你可以选择只当作普通轮播图使用'
+    ]
     return (
         <div className='backgroundSlider'>
+
+            <Description
+                tips={tips} 
+                title='Slider 双层背景图轮播图' 
+                height='600px'
+                api={api}>
+                <code>Code</code>
+            </Description>
+
             <Slider urlList={urlList} bgSlide={true}/>
         </div>
     )

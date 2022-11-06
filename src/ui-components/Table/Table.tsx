@@ -1,20 +1,20 @@
 import React, { ReactNode , useEffect,useState } from 'react'
 import styles from './Table.module.less'
 
-export interface ColumnsItem {
+export interface ColumnsItem<T> {
     key:number | string,  // 唯一标识
 
     title : string ,  // 表头表体
 
-    dataIndex  : string,  // 对应数据项的下标
+    dataIndex  : keyof T,  // 对应数据项的下标
 
     width : string  // 宽度
 
     render?:([...args])=>ReactNode  // render返回dom节点
 }
 interface PropsType {
-    columns : ColumnsItem[],
     dataSource : any[],
+    columns : ColumnsItem<any>[],
     size?: "small" | "middle" | "large"
     align?: 'start' | "center" | "end"
 }
