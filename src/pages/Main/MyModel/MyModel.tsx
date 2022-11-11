@@ -39,7 +39,7 @@ export default function MyModel() {
         {
             key: '3',
             attribute: 'changeShowModel',
-            describe : "改变modal",
+            describe : "改变showModal时的回调",
             type : "React.Dispatch<React.SetStateAction<boolean>>",
         }
     ]
@@ -47,7 +47,7 @@ export default function MyModel() {
         {
             key : "属性",
             title : "属性",
-            width : '100px',
+            width : '150px',
             dataIndex : "attribute",
         },
         {
@@ -63,11 +63,17 @@ export default function MyModel() {
             dataIndex : "type"
         },
     ]
+
     let api = <Table dataSource={dataSource} columns={columns} size='large'/>
     let tips = [
         '当你需要交互性较强的场景时可以选择模态框进行对话',
         '你可以在模态框里面嵌入任何你想嵌入的组件'
     ]
+    let code = `<Modal showModal={showModal} changeShowModal={changeShowModal}>
+
+                    <Card title='展示头部' content="展示内容" shadow={false} />
+                    
+                </Modal>`
 
     return (
         <div className={styles.container}>
@@ -75,8 +81,9 @@ export default function MyModel() {
             <Description
                 tips={tips} 
                 title='Modal 模态框' 
-                height='500px' 
-                api={api}>
+                height='700px' 
+                api={api}
+                >{code}
             </Description>
 
             <div className={styles['modal-btn']}>

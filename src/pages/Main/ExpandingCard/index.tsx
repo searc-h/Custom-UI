@@ -95,13 +95,18 @@ export default function ExpandingCard() {
         '当你需要在展示全部图片以及重点突出某个内容的时候，或许这是一个不错的选择。',
         '当你希望一次只展示一张图片的时候，不妨可以考虑用轮播图BackGround Slider '
     ]
+    let code = `
+    <SwitchCard 
+    \t    height={"400px"} 
+    \t    panelList={panelList} 
+    />`
     return (
         <div className="expandingCard">
             <Description
-                tips={tips} 
-                title='SwitchCard 扩张卡片' 
-                height='500px' 
-                api={api}>
+            tips={tips} 
+            title='SwitchCard 扩张卡片' 
+            api={api}>
+                {code}
             </Description>
 
             <SwitchCard height={"400px"} panelList={panelList} />

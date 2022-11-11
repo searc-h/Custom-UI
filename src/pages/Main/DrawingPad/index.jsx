@@ -72,6 +72,16 @@ export default function DrawingPad() {
         const ctx = ctxRef.current.getContext('2d')
         ctx.clearRect(0,0, 600, 600);
     }
+    let toImage = ()=>{
+        let ctx = ctxRef.current.getContext('2d')
+        ctx.fillStyle = "yellow";
+        let img = ctxRef.current.toDataURL('image/png',1)
+        
+        let aLink = document.createElement('a');
+        aLink.download = 'picture.jpeg';
+        aLink.href = img;
+        aLink.click();
+    }
     return (
         <div className='drawingPad'>
             <div className="container">
@@ -83,6 +93,7 @@ export default function DrawingPad() {
                     <div className="des" onClick={desClick}>-</div>
                     <div className="color"><input type="color" onChange={(e)=>{changeColor(e)}} /></div>
                     <div className="clear" onClick={clearClick}>x</div>
+                    <div className='ok'>OK</div>
                 </div>
             </div>
         </div>

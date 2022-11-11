@@ -87,15 +87,26 @@ export default function ProgressSteps() {
     let tips = [
         '丝滑的进度条往往能提高用户体验'
     ]
+    let code =  `
+    <Progress 
+    \t    isBtn={true} 
+    \t    current={current}  
+    \t    setCurrent={setCurrent} 
+    \t    total={6} 
+    \t    preText={"PRE"} 
+    \t    nextText={"NXET"}> 
+    </Progress> 
+    `
 
     return (
         <div className={styles.progresssteps}>
             <Description
                 tips={tips} 
-                title='Progress 进度条' 
-                height='800px'
+                title='Progress 进度条'
                 api={api}>
-                <code>Code</code>
+
+                {code}
+
             </Description>
             
             <Progress isBtn={true} current={current}  setCurrent={setCurrent}  total={6} preText={"PRE"} nextText={"NXET"}></Progress>
