@@ -117,13 +117,13 @@ function MyMenu({ left, right }) {
       element:'/main/netflix-navigation'
     },
     {
-      title: 'My Model',
+      title: 'Model',
       open: false,
       id: '15',
       element : "/main/my-model"
     },
     {
-      title: 'My Table',
+      title: 'Table',
       open: false,
       id: '16',
       element : "/main/my-table"

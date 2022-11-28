@@ -14,10 +14,7 @@ interface dataSourceType {
     type : string,
     default?: any
 }
-// urlList : string[],
-//     bgSlide: boolean //背景是否同步切换
-//     width ?: string,
-//     height ?: string
+
 export default function BackgroundSlider() {
 
     let urlList = [img1 , img2 ,img3 , img4 ,img5, img6]
@@ -84,15 +81,17 @@ export default function BackgroundSlider() {
         '当你希望出现双层轮播图时可以考虑选择',
         '当然你可以选择只当作普通轮播图使用'
     ]
+    let code =`
+    <Slider urlList={urlList} bgSlide={true}/>
+    `
     return (
         <div className='backgroundSlider'>
 
             <Description
                 tips={tips} 
                 title='Slider 双层背景图轮播图' 
-                height='600px'
                 api={api}>
-                <code>Code</code>
+                {code}
             </Description>
 
             <Slider urlList={urlList} bgSlide={true}/>

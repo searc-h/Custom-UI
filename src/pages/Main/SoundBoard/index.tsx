@@ -96,22 +96,23 @@ export default function SoundBoard() {
   ]
 
   let api = <Table dataSource={dataSource} columns={columns}></Table>
-
+  let code = `
+  <SoundBtn nameToRef={nameToRef} btnList={btnList}>
+  \t    <audio src={applause} id="applause" ref={Myapplause}></audio>
+  \t   <audio src={boo} id="boo" ref={Myboo}></audio>
+  \t    <audio src={gasp} id="gasp"  ref={Mygasp}></audio>
+  \t    <audio src={tada} id="tada"  ref={Mytada}></audio>
+  \t   <audio src={victory} id="victory"  ref={Myvictory}></audio>
+  \t    <audio src={wrong} id="wrong" ref={Mywrong}></audio>
+  </SoundBtn>`
   return (
     <div className={styles.soundboard}>
       <Description 
         tips={['当你想要为某些按钮添加音效时','切记传递Ref数组']} 
-        title='SoundBoard 音板' 
-        height='700px' 
+        title='SoundBoard 音板'
         api={api}>
 
-        <Card 
-          width='80%' 
-          height='200px'
-          title='说明' 
-          content={"nihao"} 
-          shadow={false}/>
-
+        {code}
       </Description>
       <SoundBtn nameToRef={nameToRef} btnList={btnList}>
           <audio src={applause} id="applause" ref={Myapplause}></audio>

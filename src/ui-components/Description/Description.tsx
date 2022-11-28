@@ -17,7 +17,12 @@ interface PropsType {
 }
 export default function Description(props : PropsType) {
   
-  let { height="450px" , title , tips ,children=null , api} = props
+  let { height , title , tips ,children=null , api } = props
+  let codeArr :string[] = []
+  if(children.length){
+    codeArr  = children.split("\n")
+    console.log(codeArr)
+  }
 
   return (
     <div className={styles.description} style={{height}}>
@@ -47,8 +52,20 @@ export default function Description(props : PropsType) {
       </div>
 
 
-      <div className="code">
-        {children && children }
+      <div className={styles.code}>
+        <div className={styles.codeTitle}>
+          Code:
+        </div>
+        {!!children && 
+        <code>
+          {codeArr.map((item,index)=>{
+            if(item.includes("\t"))
+            return <li key={index}> &nbsp;  &nbsp;  { item}</li>
+            else
+            return <li key={index}>{item}</li>
+          })}
+        </code> 
+        }
       </div>
 
     </div>
