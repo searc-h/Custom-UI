@@ -129,9 +129,10 @@ function MyMenu({ left, right }) {
       element : "/main/my-table"
     },
     {
-      title: '奔跑的滚444',
+      title: 'Lazy Load Img',
       open: false,
-      id: '17'
+      id: '17',
+      element : "/main/lazy-img"
     }
   ])
   let navigate = useNavigate()

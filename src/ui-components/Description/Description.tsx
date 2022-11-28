@@ -8,7 +8,7 @@ interface PropsType {
 
   tips? : string[],  // 作用提示
 
-  api ? : JSX.Element, // Table组件
+  api : JSX.Element, // Table组件
 
   code ? : any,  // 使用代码
 
@@ -19,7 +19,7 @@ export default function Description(props : PropsType) {
   
   let { height , title , tips ,children=null , api } = props
   let codeArr :string[] = []
-  if(children.length){
+  if(children && children.length){
     codeArr  = children.split("\n")
     console.log(codeArr)
   }

@@ -42,7 +42,7 @@ export default function Modal(props :PropsType) {
                 {/* title */}
                 <div className={styles.modeltitle}>
                     这里是modal的标题
-                    <div className={styles.shutdown}>x</div>
+                    <div className={styles.shutdown} onClick={()=>{changeShowModal(false)}}>x</div>
                 </div>
                 {/* content */}
                 <div className={styles.modelcontent}>

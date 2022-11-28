@@ -70,9 +70,7 @@ export default function MyModel() {
         '你可以在模态框里面嵌入任何你想嵌入的组件'
     ]
     let code = `<Modal showModal={showModal} changeShowModal={changeShowModal}>
-
-                    <Card title='展示头部' content="展示内容" shadow={false} />
-                    
+                \t    <Card title='展示头部' content="展示内容" shadow={false} />
                 </Modal>`
 
     return (

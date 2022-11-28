@@ -18,6 +18,7 @@ const CustomSlider = lazy(() => import('../pages/Main/CustomSlider'))
 const NetFlixNavigation = lazy(() => import('../pages/Main/NetFlixNavigation'))
 const MyModel = lazy(() => import('../pages/Main/MyModel/MyModel'))
 const MyTable = lazy(()=>import("../pages/Main/MyTable/MyTable")) 
+const LazyImg = lazy(()=>import("../pages/Main/LazyImg"))
 
 export interface RouteTypes {
   key: string | number;
@@ -113,6 +114,11 @@ export const routes: RouteTypes[] = [
                 key : "1-15",
                 path : 'my-table',
                 element : MyTable
+            },
+            {
+                key : "1-16",
+                path : 'lazy-img',
+                element : LazyImg
             }
 
         ]
