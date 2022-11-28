@@ -11,6 +11,8 @@ import Card from "./Card/Card";
 import Description from "./Description/Description";
 import Table from "./Table/Table";
 import { ColumnsItem  } from "./Table/Table";
+
+import LazyLoadImg from "./LazyLoadImg/LazyLoadImg";
 export {
     Button,
     SwitchCard,
@@ -20,7 +22,8 @@ export {
     Modal,
     Card,
     Description,
-    Table
+    Table,
+    LazyLoadImg
 }
 export type PanelItem = panelItem
 export type ColumnsType<T> = ColumnsItem<T>[]
